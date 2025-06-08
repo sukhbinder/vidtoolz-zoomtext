@@ -24,7 +24,31 @@ vidtoolz install vidtoolz-zoomtext
 
 type ``vid zoomtext --help`` to get help
 
+```bash
+usage: vid zoomtext [-h] [-t TEXT] [-f FONT] [-o OUTPUT] [-fs FONTSIZE]
+                    [-pad PADDING] [-tc TEXT_COLOR]
+                    main_video
 
+Zoom out the video and display text as caption.
+
+positional arguments:
+  main_video            Path to the main video file.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t TEXT, --text TEXT  Text to write
+  -f FONT, --font FONT  Font name to use. Ex Noteworthy, Melno, Papyrus,
+                        Zapfino (default: Arial)
+  -o OUTPUT, --output OUTPUT
+                        Output video file name (default: None)
+  -fs FONTSIZE, --fontsize FONTSIZE
+                        Fontsize (default: 80)
+  -pad PADDING, --padding PADDING
+                        Padding (default: 80)
+  -tc TEXT_COLOR, --text-color TEXT_COLOR
+                        Text color. (default: white)
+
+```
 
 ## Development
 
