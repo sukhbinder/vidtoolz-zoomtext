@@ -4,6 +4,8 @@ import argparse
 from types import SimpleNamespace
 import os
 
+IN_GITHUB_ACTIONS = os.getenv("GITHUB_ACTIONS") == "true"
+
 
 @pytest.fixture
 def parser():
@@ -60,6 +62,7 @@ def test_plugin(capsys):
     assert "Hello! This is an example ``vidtoolz`` plugin." in captured.out
 
 
+@pytest.mark.skipif(IN_GITHUB_ACTIONS, reason="Test doesn't work in Github Actions.")
 def test_run(tmpdir):
     outputfile = os.path.join(str(tmpdir), "temp.mp4")
 
