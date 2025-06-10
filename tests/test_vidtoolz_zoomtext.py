@@ -1,6 +1,8 @@
 import pytest
 import vidtoolz_zoomtext as w
 import argparse
+from types import SimpleNamespace
+import os
 
 
 @pytest.fixture
@@ -56,3 +58,21 @@ def test_plugin(capsys):
     w.zoomtext_plugin.hello(None)
     captured = capsys.readouterr()
     assert "Hello! This is an example ``vidtoolz`` plugin." in captured.out
+
+
+def test_run(tmpdir):
+    outputfile = os.path.join(str(tmpdir), "temp.mp4")
+
+    args = SimpleNamespace(
+        main_video=os.path.join(os.path.dirname(__file__), "testvid.mp4"),
+        text="Hello, world!",
+        font="Arial",
+        output=outputfile,
+        fontsize=60,
+        padding=80,
+        text_color="white",
+    )
+
+    plugin = w.zoomtext_plugin
+    plugin.run(args)
+    assert os.path.exists(outputfile)
