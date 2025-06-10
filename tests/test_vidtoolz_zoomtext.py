@@ -66,7 +66,7 @@ def test_run(tmpdir):
     args = SimpleNamespace(
         main_video=os.path.join(os.path.dirname(__file__), "testvid.mp4"),
         text="Hello, world!",
-        font="Arial",
+        font=None,
         output=outputfile,
         fontsize=60,
         padding=80,
