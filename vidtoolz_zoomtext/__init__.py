@@ -39,11 +39,14 @@ def animate_video_with_text(
 ):
     # Load the original video
     clip = VideoFileClip(input_path)
+    video_duration = clip.duration
 
     # Animate zoom from 100% to 80% over the first second
     def dynamic_resize(t):
         if t < 1:
             return 1 - 0.2 * (t / 1)  # Linear scale from 1.0 to 0.8 in 1 second
+        elif t > video_duration - 1:
+            return 0.8 + 0.2 * ((t - (video_duration - 1)) / 1)
         else:
             return 0.8
 
