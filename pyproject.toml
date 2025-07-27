@@ -1,17 +1,12 @@
 [project]
 name = "vidtoolz-zoomtext"
-version = "0.1.0"
+version = "0.1.1"
 description = "Zoom out the video and display text as caption."
 readme = "README.md"
-authors = [{name = "Sukhbinder Singh"}]
-license = {text = "Apache-2.0"}
-classifiers = [
-    "License :: OSI Approved :: Apache Software License"
-]
-dependencies = [
-    "vidtoolz",
-    "vidtoolz-add-text",
-]
+authors = [{ name = "Sukhbinder Singh" }]
+license = { text = "Apache-2.0" }
+classifiers = ["License :: OSI Approved :: Apache Software License"]
+dependencies = ["vidtoolz", "vidtoolz-add-text"]
 
 [project.urls]
 Homepage = "https://github.com/sukhbinder/vidtoolz-zoomtext"
